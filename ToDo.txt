@@ -1,0 +1,61 @@
+Goal: Learn how to create an upgreadable smart contract
+
+------------DONE------------
+I. Learn just watch first. DONE
+
+II. Then take notes. DONE
+------------TODO------------
+
+
+III. Then execute the code based on the latest version. https://docs.openzeppelin.com/learn/upgrading-smart-contracts?pref=hardhat
+
+D:& cd D:\USER\Downloads\ATLAS\Projects\Mastering-Security-Token-ERC-3643\Upgradeable-Smart-Contract-Mastering
+
+
+npx hardhat node
+
+npm install --save-dev @openzeppelin/hardhat-upgrades
+
+https://docs.openzeppelin.com/learn/setting-up-a-node-project#creating-a-project
+
+npm init -y
+
+yarn init
+
+yarn add --dev hardhat
+
+npm install --save-dev hardhat
+
+npx hardhat compile --force
+
+npm install @openzeppelin/contracts
+
+npx hardhat node
+
+
+CONTINUE HERE
+
+FOllow the environment tutorial
+https://docs.openzeppelin.com/learn/deploying-and-interacting
+
+
+
+
+
+-------------------------------------------------
+-----------------OTHER TUTORIALS-----------------
+https://docs.alchemy.com/docs/upgradeable-smart-contracts
+
+Upgrade ERC-20
+
+
+
+
+
+------------------------------------
+
+
+QUESTIONS
+
+When you deploy a new implementation, if you don't add the previous functions you had in V1 to V2, do they just dissapear and they cant be called anymore? So if I want to have V1 functions in V2 I would need to copy and paste them?
+
