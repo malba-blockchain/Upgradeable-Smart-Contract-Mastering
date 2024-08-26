@@ -4,10 +4,12 @@ Goal: Learn how to create an upgreadable smart contract
 I. Learn just watch first. DONE
 
 II. Then take notes. DONE
-------------TODO------------
 
 
-III. Then execute the code based on the latest version. https://docs.openzeppelin.com/learn/upgrading-smart-contracts?pref=hardhat
+III. Then execute the code based on the latest version. 
+3.1. Follow the tutorial
+https://docs.openzeppelin.com/learn/deploying-and-interacting
+https://docs.openzeppelin.com/learn/upgrading-smart-contracts?pref=hardhat
 
 D:& cd D:\USER\Downloads\ATLAS\Projects\Mastering-Security-Token-ERC-3643\Upgradeable-Smart-Contract-Mastering
 
@@ -34,6 +36,8 @@ npx hardhat node
 
 npm install --save-dev @nomicfoundation/hardhat-ethers ethers
 
+---------INITIAL LOCAL DEPLOYMENT---------
+
 npx hardhat run --network localhost scripts/deploy.js
 
 
@@ -50,17 +54,17 @@ await box.retrieve()
 
 npx hardhat run --network localhost scripts/index.js
 
-DEPLOYING UPGRADEABLE
+---------DEPLOYING LOCAL UPGRADEABLE VERSION---------
 
 npm install --save-dev @openzeppelin/hardhat-upgrades
 
 npx hardhat run --network localhost scripts/deploy_upgradeable_box.js
 
-----------------
 Box deployed to:  0xa513E6E4b8f2a923D98304ec87F64353C4D5C853
 
-npx hardhat console --network localhost
+Interacting with hardhat console:
 
+npx hardhat console --network localhost
 
 const Box = await ethers.getContractFactory('Box')
 
@@ -72,9 +76,9 @@ await box.increment()
 
 (await box.retrieve()).toString();
 
---------------------------------------------------
+---------DEPLOYING LOCAL UPGRADED V2 VERSION---------
 
-npx hardhat run --network localhost scripts/upgrade_box.js
+npx hardhat run --network localhost scripts/upgrade_box_V2.js
 
 npx hardhat console --network localhost
 
@@ -87,13 +91,77 @@ await box.increment();
 (await box.retrieve()).toString();
 
 
-CONTINUE HERE
+---------DEPLOYING LOCAL UPGRADED V3 VERSION---------
 
-FOllow the environment tutorial
-https://docs.openzeppelin.com/learn/deploying-and-interacting
+npx hardhat run --network localhost scripts/upgrade_box_V3.js
+
+npx hardhat console --network localhost
+
+const BoxV3 = await ethers.getContractFactory('BoxV3');
+
+const box = await BoxV3.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853');
+
+(await box.retrieve()).toString();
+
+await box.increment();
+
+(await box.retrieve()).toString();
+
+await box.multiply();
+
+(await box.retrieve()).toString();
+
+3.2. Follow the environment tutorial and do a third update to answer the questions below on local testnet DONE
+
+------------TODO------------
+
+
+3.3. Deploy the same Box smart contracts on testnet. One at a time validate and see V1, V2, V3
+
+
+---------DEPLOYING LOCAL UPGRADEABLE VERSION---------
+
+npm install --save-dev @openzeppelin/hardhat-upgrades
+
+npx hardhat run --network localhost scripts/deploy_upgradeable_box.js
+
+Box deployed to:  0xa513E6E4b8f2a923D98304ec87F64353C4D5C853
+
+Interacting with hardhat console:
+
+npx hardhat console --network localhost
+
+const Box = await ethers.getContractFactory('Box')
+
+const box = Box.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853')
+
+(await box.retrieve()).toString();
+
+await box.increment()
+
+(await box.retrieve()).toString();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IV. Turn hydraxis smart contract into an upgradeable one
+
+V. Follow the whole path for safe deployment based on notes taken in Cherry Tree. Ethereum Developer Bootcamp.
+
+VI. Start working on the deployment of the staking smart contract with the new knowledge.
 
 
 -------------------------------------------------
@@ -112,4 +180,6 @@ Upgrade ERC-20
 QUESTIONS
 
 When you deploy a new implementation, if you don't add the previous functions you had in V1 to V2, do they just dissapear and they cant be called anymore? So if I want to have V1 functions in V2 I would need to copy and paste them?
+
+YES SIR! They just dissapear and can't be called anymore. If you want to have them back you better copy and paste them.
 

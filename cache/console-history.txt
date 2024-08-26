@@ -1,0 +1,33 @@
+await box.multiply();
+(await box.retrieve()).toString();
+await box.increment();
+const box = await BoxV2.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853');
+const BoxV2 = await ethers.getContractFactory('BoxV2');
+(await box.retrieve()).toString();
+await box.multiply();
+(await box.retrieve()).toString();
+await box.increment();
+(await box.retrieve()).toString();
+const box = await BoxV3.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853');
+const BoxV3 = await ethers.getContractFactory('BoxV3');
+(await box.retrieve()).toString();
+await box.increment();
+const box = await BoxV2.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853');
+const BoxV2 = await ethers.getContractFactory('BoxV2');
+await box.increment()
+(await box.retrieve()).toString();
+await box.retrieve()
+const box = Box.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853')
+const Box = await ethers.getContractFactory('Box')
+cls
+(await box.retrieve()).toString();
+const box = await Box.attach('0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0');
+const Box = await ethers.getContractFactory('Box');
+cls
+await box.retrieve()
+await box.store(42)
+const box = Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const box = Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3'
+const Box = await ethers.getContractFactory('Box');
+cls
+await box.store(42)
