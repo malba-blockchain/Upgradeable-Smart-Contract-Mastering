@@ -2,7 +2,7 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "D:\\USER\\Downloads\\ATLAS\\Projects\\Mastering-Security-Token-ERC-3643\\Upgradeable-Smart-Contract-Mastering\\contracts\\Box.sol": {
-      "lastModificationDate": 1724433884445,
+      "lastModificationDate": 1724685083567,
       "contentHash": "5c36bde073e8b415bfd6d3412253a324",
       "sourceName": "contracts/Box.sol",
       "solcConfig": {
@@ -20,7 +20,8 @@
                 "evm.bytecode",
                 "evm.deployedBytecode",
                 "evm.methodIdentifiers",
-                "metadata"
+                "metadata",
+                "storageLayout"
               ],
               "": [
                 "ast"
@@ -35,6 +36,43 @@
       ],
       "artifacts": [
         "Box"
+      ]
+    },
+    "D:\\USER\\Downloads\\ATLAS\\Projects\\Mastering-Security-Token-ERC-3643\\Upgradeable-Smart-Contract-Mastering\\contracts\\BoxV2.sol": {
+      "lastModificationDate": 1724689027814,
+      "contentHash": "4d70b1dd70ce4d83b0af60cc4423e69a",
+      "sourceName": "contracts/BoxV2.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "BoxV2"
       ]
     }
   }

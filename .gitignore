@@ -372,4 +372,4 @@ testeth
 .idea
 node_modules
 bin_output
-logs
+logs'.env' 
