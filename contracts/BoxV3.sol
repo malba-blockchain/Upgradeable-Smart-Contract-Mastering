@@ -1,4 +1,3 @@
-// contracts/Box.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -24,6 +23,4 @@ contract BoxV3 {
         _value = _value * 2;
         emit ValueChanged(_value);
     }
-
-
 }

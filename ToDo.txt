@@ -5,7 +5,6 @@ I. Learn just watch first. DONE
 
 II. Then take notes. DONE
 
-
 III. Then execute the code based on the latest version. 
 3.1. Follow the tutorial
 https://docs.openzeppelin.com/learn/deploying-and-interacting
@@ -35,6 +34,7 @@ npm install @openzeppelin/contracts
 npx hardhat node
 
 npm install --save-dev @nomicfoundation/hardhat-ethers ethers
+
 
 ---------INITIAL LOCAL DEPLOYMENT---------
 
@@ -76,6 +76,8 @@ await box.increment()
 
 (await box.retrieve()).toString();
 
+
+
 ---------DEPLOYING LOCAL UPGRADED V2 VERSION---------
 
 npx hardhat run --network localhost scripts/upgrade_box_V2.js
@@ -89,6 +91,7 @@ const box = await BoxV2.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853');
 await box.increment();
 
 (await box.retrieve()).toString();
+
 
 
 ---------DEPLOYING LOCAL UPGRADED V3 VERSION---------
@@ -113,51 +116,108 @@ await box.multiply();
 
 3.2. Follow the environment tutorial and do a third update to answer the questions below on local testnet DONE
 
-------------TODO------------
+
+3.3. Deploy the same Box smart contracts on testnet. One at a time validate and see V1, V2, V3 DONE
 
 
-3.3. Deploy the same Box smart contracts on testnet. One at a time validate and see V1, V2, V3
-
-
----------DEPLOYING LOCAL UPGRADEABLE VERSION---------
+---------DEPLOYING TESTNET UPGRADEABLE VERSION---------
 
 npm install --save-dev @openzeppelin/hardhat-upgrades
 
-npx hardhat run --network localhost scripts/deploy_upgradeable_box.js
+npx mnemonics
 
-Box deployed to:  0xa513E6E4b8f2a923D98304ec87F64353C4D5C853
+npx hardhat console --network polygonAmoy
+
+const accounts = await ethers.getSigners()
+
+accounts[0]
+0x78eb464e7447B95eAdB8b14d8323516B043BE6FC
+
+(await ethers.provider.getBalance(accounts[0])).toString()
+
+
+npx hardhat run --network polygonAmoy scripts/deploy_upgradeable_box.js
+
+(IMPLEMENTATION) Stores the logic
+0xEE522741a4D77F9d48c547a829B5f0F60f9E06a0
+
+(PROXY) Stores the variables
+Box deployed to: 0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500 
+
+(PROXY ADMIN)
+0x3129AbBFf665092658E0159c5Ddd648Cf59dEF79
+
+
+npm install --save-dev @nomicfoundation/hardhat-verify
+
+npx hardhat verify --network polygonAmoy 0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500
+
+npx hardhat verify --network polygonAmoy 0xEE522741a4D77F9d48c547a829B5f0F60f9E06a0
+
 
 Interacting with hardhat console:
 
-npx hardhat console --network localhost
+npx hardhat console --network polygonAmoy 
 
 const Box = await ethers.getContractFactory('Box')
 
-const box = Box.attach('0xa513E6E4b8f2a923D98304ec87F64353C4D5C853')
-
-(await box.retrieve()).toString();
-
-await box.increment()
+const box = Box.attach('0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500')
 
 (await box.retrieve()).toString();
 
 
+---------DEPLOYING TESTNET UPGRADED V2 VERSION---------
+
+npx hardhat run --network polygonAmoy scripts/upgrade_box_V2.js
+
+(IMPLEMENTATION V2) Stores the updated logic
+0x682F30C4b1C8471113A757De4E1DA9a8AeEE73dB
+
+npx hardhat verify --network polygonAmoy 0x682F30C4b1C8471113A757De4E1DA9a8AeEE73dB
+
+
+npx hardhat console --network polygonAmoy
+
+const BoxV2 = await ethers.getContractFactory('BoxV2');
+
+const box = await BoxV2.attach('0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500');
+
+await box.increment();
+
+(await box.retrieve()).toString();
+
+
+---------DEPLOYING TESTNET UPGRADED V3 VERSION---------
+
+npx hardhat run --network polygonAmoy scripts/upgrade_box_V3.js
+
+(IMPLEMENTATION V3) Stores the updated logic
+0x96f35a667bd73611bd0ef0bb542e51c9ee3eb1ca
+
+npx hardhat verify --network polygonAmoy 0x96f35a667bd73611bd0ef0bb542e51c9ee3eb1ca
+
+
+npx hardhat console --network polygonAmoy
+
+const BoxV3 = await ethers.getContractFactory('BoxV3');
+
+const box = await BoxV3.attach('0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500');
+
+(await box.retrieve()).toString();
+
+await box.increment();
+
+(await box.retrieve()).toString();
+
+await box.multiply();
+
+(await box.retrieve()).toString();
 
 
 
+------------TODO------------
 
-
-
-
-
-
-
-
-
-
-
-
-IV. Turn hydraxis smart contract into an upgradeable one
+IV. Turn hydraxis smart contract into an upgradeable one. Check how to calculate tokens to retrieve based on price and amount.
 
 V. Follow the whole path for safe deployment based on notes taken in Cherry Tree. Ethereum Developer Bootcamp.
 

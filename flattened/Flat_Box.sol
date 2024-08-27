@@ -1,4 +1,11 @@
+// Sources flattened with hardhat v2.22.9 https://hardhat.org
+
 // SPDX-License-Identifier: MIT
+
+// File contracts/Box.sol
+
+// contracts/Box.sol
+// Original license: SPDX_License_Identifier: MIT
 pragma solidity ^0.8.20;
 
 contract Box {

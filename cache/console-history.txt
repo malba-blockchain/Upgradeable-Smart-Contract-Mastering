@@ -1,3 +1,11 @@
+(await ethers.provider.getBalance(accounts[0])).toString()
+accounts[0]
+(await ethers.provider.getBalance(accounts[0])).toString()
+cls
+accounts
+const accounts = await ethers.getSigners();
+accounts = await ethers.provider.listAccounts();
+accounts = await ethers.provider.listAccounts()
 await box.multiply();
 (await box.retrieve()).toString();
 await box.increment();
@@ -27,6 +35,22 @@ cls
 await box.retrieve()
 await box.store(42)
 const box = Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const box = Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3'
+const Box = await ethers.getContractFactory('Box');
+cls
+await box.store(42)t ethers.getContractFactory('Box')
+cls
+(await box.retrieve()).toString();
+const box = await Box.attach('0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0');
+const Box = await ethers.getContractFactory('Box');
+cls
+await box.retrieve()
+await box.store(42)
+const box = Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
+const box = Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3'
+const Box = await ethers.getContractFactory('Box');
+cls
+await box.store(42)2315678afecb367f032d93F642f64180aa3');
 const box = Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3'
 const Box = await ethers.getContractFactory('Box');
 cls

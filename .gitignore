@@ -5,6 +5,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+secrets.json
 ### Eclipse template
 
 .metadata
@@ -355,6 +356,8 @@ celerybeat-schedule
 env/
 venv/
 ENV/
+
+
 
 # Spyder project settings
 .spyderproject
