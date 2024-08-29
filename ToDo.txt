@@ -12,7 +12,6 @@ https://docs.openzeppelin.com/learn/upgrading-smart-contracts?pref=hardhat
 
 D:& cd D:\USER\Downloads\ATLAS\Projects\Mastering-Security-Token-ERC-3643\Upgradeable-Smart-Contract-Mastering
 
-
 npx hardhat node
 
 npm install --save-dev @openzeppelin/hardhat-upgrades
@@ -30,7 +29,7 @@ npm install --save-dev hardhat
 npx hardhat compile --force
 
 npm install @openzeppelin/contracts
-
+s
 npx hardhat node
 
 npm install --save-dev @nomicfoundation/hardhat-ethers ethers
@@ -116,11 +115,16 @@ await box.multiply();
 
 3.2. Follow the environment tutorial and do a third update to answer the questions below on local testnet DONE
 
-
 3.3. Deploy the same Box smart contracts on testnet. One at a time validate and see V1, V2, V3 DONE
 
-
+-------------------------------------------------------
 ---------DEPLOYING TESTNET UPGRADEABLE VERSION---------
+-------------------------------------------------------
+
+npx hardhat run --network polygonAmoy scripts/deploy_testnet_ordinary.js
+
+
+NEW WALLET: 0x78eb464e7447B95eAdB8b14d8323516B043BE6FC
 
 npm install --save-dev @openzeppelin/hardhat-upgrades
 
@@ -136,7 +140,7 @@ accounts[0]
 (await ethers.provider.getBalance(accounts[0])).toString()
 
 
-npx hardhat run --network polygonAmoy scripts/deploy_upgradeable_box.js
+npx hardhat run --network polygonAmoy scripts/deploy_testnet_upgradeable_box.js
 
 (IMPLEMENTATION) Stores the logic
 0xEE522741a4D77F9d48c547a829B5f0F60f9E06a0
@@ -213,12 +217,16 @@ await box.multiply();
 
 (await box.retrieve()).toString();
 
-
-
 ------------TODO------------
 
-IV. Turn hydraxis smart contract into an upgradeable one. Check how to calculate tokens to retrieve based on price and amount.
+CONTINUE HERE
+IDeploy the proxy smart contract using the script
 
+npx hardhat run scripts/transferOwnership.js --network polygonAmoy
+
+
+
+IV. Check how to calculate tokens to retrieve based on price and amount. Turn hydraxis smart contract into an upgradeable one. 
 V. Follow the whole path for safe deployment based on notes taken in Cherry Tree. Ethereum Developer Bootcamp.
 
 VI. Start working on the deployment of the staking smart contract with the new knowledge.

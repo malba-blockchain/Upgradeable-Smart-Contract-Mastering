@@ -1,5 +1,37 @@
 (await ethers.provider.getBalance(accounts[0])).toString()
 accounts[0]
+const accounts = await ethers.getSigners()
+accounts[0]
+const accounts = await ethers.getSigners()
+cls
+const privateKey = hdNode.privateKey;
+const hdNode = ethers.utils.HDNode.fromMnemonic(seedPhrase);
+const seedPhrase = "smoke tornado believe naive student pitch vintage bring term shrug alarm fiction";
+const ethers = require("ethers");
+const hdNode = ethers.utils.HDNode.fromMnemonic(seedPhrase);
+cls
+console.log("Private Key:", privateKey);const hdNode = ethers.utils.HDNode.fromMnemonic(seedPhrase);
+const privateKey = wallet.privateKey;
+const wallet = ethers.Wallet.fromMnemonic(seedPhrase);
+const seedPhrase = "smoke tornado believe naive student pitch vintage bring term shrug alarm fiction";
+const ethers = require("ethers");
+cls
+console.log("Private Key:", privateKey);
+const privateKey = wallet.privateKey;
+// Get the private key
+const wallet = ethers.Wallet.fromMnemonic(seedPhrase);
+// Derive the wallet from the seed phrase
+const seedPhrase = "smoke tornado believe naive student pitch vintage bring term shrug alarm fiction";
+// Replace with your actual seed phrase
+const { ethers } = require("hardhat");
+privateKey1
+const privateKey1 = accounts[0].privateKey
+accounts[0].privateKey
+accounts[0].privatekey
+accounts[0]
+const accounts = await ethers.getSigners()
+(await ethers.provider.getBalance(accounts[0])).toString()
+accounts[0]
 (await ethers.provider.getBalance(accounts[0])).toString()
 cls
 accounts
