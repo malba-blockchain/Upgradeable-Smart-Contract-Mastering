@@ -1,5 +1,3 @@
-// scripts/upgrade_box.js
-
 const {ethers, upgrades} = require('hardhat');
 
 async function main () {

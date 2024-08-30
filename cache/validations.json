@@ -2,6 +2,48 @@
   "version": "3.4",
   "log": [
     {
+      "contracts/BoxV4.sol:BoxV4": {
+        "src": "contracts\\BoxV4.sol:4",
+        "version": {
+          "withMetadata": "d17fd8933c75f9045d01fda64c822386754cde854016c35f17395fc0acbfb5d9",
+          "withoutMetadata": "d1ae87c08fa3b923ffe35fcbea152c03e646e229eed456e4bbf0872ecce35578",
+          "linkedWithoutMetadata": "d1ae87c08fa3b923ffe35fcbea152c03e646e229eed456e4bbf0872ecce35578"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "store(uint256)",
+          "retrieve()",
+          "multiply()",
+          "power()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_value",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "BoxV4",
+              "src": "contracts\\BoxV4.sol:5"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.20"
+      }
+    },
+    {
       "contracts/BoxV3.sol:BoxV3": {
         "src": "contracts\\BoxV3.sol:4",
         "version": {

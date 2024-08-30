@@ -111,6 +111,43 @@
       "artifacts": [
         "BoxV3"
       ]
+    },
+    "D:\\USER\\Downloads\\ATLAS\\Projects\\Mastering-Security-Token-ERC-3643\\Upgradeable-Smart-Contract-Mastering\\contracts\\BoxV4.sol": {
+      "lastModificationDate": 1725036805729,
+      "contentHash": "0f33dd5de8a4af9faeb72863d9f79253",
+      "sourceName": "contracts/BoxV4.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "BoxV4"
+      ]
     }
   }
 }

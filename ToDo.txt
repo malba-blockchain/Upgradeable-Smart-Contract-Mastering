@@ -121,6 +121,8 @@ await box.multiply();
 ---------DEPLOYING TESTNET UPGRADEABLE VERSION---------
 -------------------------------------------------------
 
+START BY GETTING A PRIVATE KEY FROM AN ACCOUNT IN METAMASK TO ADD TO AN .ENV FILE
+
 npx hardhat run --network polygonAmoy scripts/deploy_testnet_ordinary.js
 
 
@@ -144,19 +146,22 @@ npx hardhat run --network polygonAmoy scripts/deploy_testnet_upgradeable_box.js
 
 (IMPLEMENTATION) Stores the logic
 0xEE522741a4D77F9d48c547a829B5f0F60f9E06a0
+0x1f4dc2bd2fe291c3cce9963491827af53858e13e
 
 (PROXY) Stores the variables
-Box deployed to: 0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500 
+Box deployed to: 0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500
+0x7c14adc7e38baf706157906c9c649b422e698405
 
 (PROXY ADMIN)
 0x3129AbBFf665092658E0159c5Ddd648Cf59dEF79
+0xA864c45b5144A8D2ee428343EC836789C4854cC5
 
 
 npm install --save-dev @nomicfoundation/hardhat-verify
 
-npx hardhat verify --network polygonAmoy 0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500
+npx hardhat verify --network polygonAmoy 0x1f4dc2bd2fe291c3cce9963491827af53858e13e
 
-npx hardhat verify --network polygonAmoy 0xEE522741a4D77F9d48c547a829B5f0F60f9E06a0
+npx hardhat verify --network polygonAmoy 0x7c14adc7e38baf706157906c9c649b422e698405
 
 
 Interacting with hardhat console:
@@ -172,7 +177,7 @@ const box = Box.attach('0x77dd7D71dcc6e071a47eefbeBcdb1Ad9b861f500')
 
 ---------DEPLOYING TESTNET UPGRADED V2 VERSION---------
 
-npx hardhat run --network polygonAmoy scripts/upgrade_box_V2.js
+npx hardhat run --network polygonAmoy scripts/upgrade_testnet_box_V2.js
 
 (IMPLEMENTATION V2) Stores the updated logic
 0x682F30C4b1C8471113A757De4E1DA9a8AeEE73dB
@@ -193,12 +198,12 @@ await box.increment();
 
 ---------DEPLOYING TESTNET UPGRADED V3 VERSION---------
 
-npx hardhat run --network polygonAmoy scripts/upgrade_box_V3.js
+npx hardhat run --network polygonAmoy scripts/upgrade_testnet_box_V3.js
 
 (IMPLEMENTATION V3) Stores the updated logic
 0x96f35a667bd73611bd0ef0bb542e51c9ee3eb1ca
 
-npx hardhat verify --network polygonAmoy 0x96f35a667bd73611bd0ef0bb542e51c9ee3eb1ca
+npx hardhat verify --network polygonAmoy 0x96F35a667BD73611BD0ef0bb542E51C9EE3eb1CA
 
 
 npx hardhat console --network polygonAmoy
@@ -217,16 +222,22 @@ await box.multiply();
 
 (await box.retrieve()).toString();
 
+---------DEPLOYING TESTNET UPGRADED V3 VERSION---------
+
+npx hardhat run --network polygonAmoy scripts/upgrade_testnet_box_V4.js
+
+(IMPLEMENTATION V4) Stores the updated logic
+0x8148cAADfef0d2A8FE9C9298587d7ef8F03d5f8A
+
+npx hardhat verify --network polygonAmoy 0x8148cAADfef0d2A8FE9C9298587d7ef8F03d5f8A
+
+
 ------------TODO------------
-
-CONTINUE HERE
-IDeploy the proxy smart contract using the script
-
-npx hardhat run scripts/transferOwnership.js --network polygonAmoy
 
 
 
 IV. Check how to calculate tokens to retrieve based on price and amount. Turn hydraxis smart contract into an upgradeable one. 
+
 V. Follow the whole path for safe deployment based on notes taken in Cherry Tree. Ethereum Developer Bootcamp.
 
 VI. Start working on the deployment of the staking smart contract with the new knowledge.
